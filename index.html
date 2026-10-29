@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14241e">
+  <meta name="description" content="Тихий берег — учебный сервис выбора и бронирования лесных домиков у озера.">
+  <title>Тихий берег — дома среди тишины</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="map.css">
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#booking">Перейти к выбору дома</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Тихий берег — на главную"><span class="brand-mark" aria-hidden="true">⌁</span><span>ТИХИЙ<br>БЕРЕГ</span></a>
+    <nav class="desktop-nav" aria-label="Основная навигация"><a href="#about">О месте</a><a href="#booking">Домики</a><a href="#map">Карта</a><a href="#bookings">Мои брони</a></nav>
+    <a class="header-action" href="#booking">Выбрать дом <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo"></div><div class="hero-shade"></div>
+      <div class="hero-content wrap">
+        <p class="eyebrow light"><span class="line"></span> ДОМА У ОЗЕРА · ЛЕС · ТИШИНА</p>
+        <h1 id="hero-title">Место, где можно<br><em>замедлиться.</em></h1>
+        <p class="hero-lead">Уютные дома среди сосен, неспешные вечера у воды и время, которое снова принадлежит вам.</p>
+        <a class="button button-cream" href="#booking">Найти свой дом <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-bottom wrap"><span>01 / 03 — ОСТАНОВИТЕСЬ НА МГНОВЕНИЕ</span><span>ЛИСТАЙТЕ ВНИЗ <b aria-hidden="true">↓</b></span></div>
+    </section>
+
+    <section class="intro wrap" id="about" aria-labelledby="intro-title">
+      <div class="intro-kicker"><span class="section-index">01 / МЕСТО</span><span class="small-symbol" aria-hidden="true">✳</span></div>
+      <div class="intro-main"><p class="eyebrow">ЗАГОРОДНЫЙ ОТДЫХ С ХАРАКТЕРОМ</p><h2 id="intro-title">Ближе к природе.<br><i>Ближе к себе.</i></h2><p>Здесь день начинается с вида на лес, а заканчивается тёплым светом в окнах и разговорами без спешки. Выберите домик, который станет вашим маленьким убежищем.</p></div>
+      <div class="intro-stats" aria-label="Особенности территории"><div><strong>08</strong><span>домов среди сосен</span></div><div><strong>01</strong><span>озеро для долгих прогулок</span></div><div><strong>∞</strong><span>поводов остаться подольше</span></div></div>
+    </section>
+
+    <section class="cinema-section" aria-label="Атмосфера Тихого берега"><div class="cinema-image"><img src="assets/open-air-cinema.png" alt="Вечерний кинопоказ под деревьями и гирляндами" loading="lazy"></div><div class="cinema-copy"><span class="section-index">ТИШИНА, КОТОРУЮ ХОЧЕТСЯ ЗАПОМНИТЬ</span><h2>Вечера здесь<br>особенные.</h2><p>Огни среди деревьев, кино под открытым небом и лёгкий запах хвои. Маленькие моменты, ради которых хочется сбежать из города.</p><a href="#booking" class="text-link">Выбрать дом для отдыха <span aria-hidden="true">↗</span></a></div></section>
+
+    <section class="booking-section" id="booking" aria-labelledby="booking-title">
+      <div class="wrap">
+        <div class="section-heading"><div><span class="section-index">02 / ВЫБОР ДОМА</span><h2 id="booking-title">Найдите свой <i>уголок.</i></h2></div><p>Каждый дом по-своему уютный. Подберите тот, который подходит вашему отдыху.</p></div>
+        <div class="filters" aria-label="Фильтры домов"><label>Количество гостей<select id="guest-filter"><option value="0">Любое количество</option><option value="2">От 2 гостей</option><option value="3">От 3 гостей</option><option value="4">От 4 гостей</option><option value="6">От 6 гостей</option></select></label><label>Цена за ночь<select id="price-filter"><option value="0">Любая цена</option><option value="9000">До 9 000 ₽</option><option value="12000">До 12 000 ₽</option><option value="16000">До 16 000 ₽</option><option value="20000">До 20 000 ₽</option></select></label><button type="button" id="reset-filters" class="reset-link">Сбросить фильтры <span aria-hidden="true">↺</span></button><span id="result-count" class="result-count"></span></div>
+        <p id="app-message" class="app-message" role="status" aria-live="polite" hidden></p>
+        <div id="house-list" class="house-grid" aria-live="polite"></div>
+        <p id="no-results" class="empty-results" hidden>По этим условиям домов не нашлось. Попробуйте изменить фильтры.</p>
+      </div>
+    </section>
+
+    <section class="map-section" id="map" aria-labelledby="map-title">
+      <div class="wrap">
+        <div class="section-heading map-heading"><div><span class="section-index">03 / ИССЛЕДУЙТЕ ТЕРРИТОРИЮ</span><h2 id="map-title">Свой маршрут <i>к тишине.</i></h2></div><p>Загляните в каждый уголок: нажмите на домик или место отдыха, чтобы открыть его карточку.</p></div>
+        <div class="map-toolbar"><span>ИНТЕРАКТИВНАЯ КАРТА · НЕ В МАСШТАБЕ</span><div class="map-legend"><span><b class="legend-shape"></b> свободен</span><span><b class="legend-shape selected"></b> выбран</span><span><b class="legend-shape occupied"></b> занят</span></div></div>
+        <div class="map-scroll" tabindex="0" aria-label="Карта территории. На узком экране прокрутите вправо, чтобы увидеть все домики.">
+          <div class="map-stage"><img class="map-art" src="assets/territory-map.svg" alt="" aria-hidden="true"><div id="map-markers" class="map-interactions"></div><span class="map-compass" aria-hidden="true">N ↑</span></div>
+        </div>
+        <p class="map-scroll-hint">На телефоне листайте карту влево и вправо. К домикам можно перейти также через карточки выше.</p>
+      </div>
+    </section>
+
+    <section class="reservation-section" id="reserve" aria-labelledby="reserve-title"><div class="wrap reserve-layout"><div class="reserve-intro"><span class="section-index">04 / ВАШ ОТДЫХ</span><h2 id="reserve-title">Осталось <i>спланировать отдых.</i></h2><p>В этом учебном демо дом бронируется целиком до отмены. Укажите количество гостей и ночей — итог появится сразу.</p><div class="reserve-photo"><img src="assets/sosna-1.png" alt="Заснеженный дом A-frame с огнями и купелью" loading="lazy"></div></div><div class="booking-panel"><div id="selected-house" class="selected-house"><span class="panel-overline">ВАШ ВЫБОР</span><h3>Выберите домик</h3><p>Нажмите на свободный дом в каталоге или на карте.</p></div><form id="booking-form" novalidate><div class="form-fields"><div class="field"><label for="guests">Гостей</label><input id="guests" name="guests" type="number" min="1" step="1" inputmode="numeric" placeholder="Например, 2" aria-describedby="guests-error"><small id="guests-error" class="field-error"></small></div><div class="field"><label for="nights">Ночей</label><input id="nights" name="nights" type="number" min="1" max="30" step="1" inputmode="numeric" placeholder="От 1 до 30" aria-describedby="nights-error"><small id="nights-error" class="field-error"></small></div></div><div class="price-total"><span>Итого за проживание</span><strong id="total-price">—</strong></div><button class="button button-dark" id="confirm-button" type="submit">Подтвердить бронь <span aria-hidden="true">↗</span></button><p id="form-error" class="form-error" role="alert"></p><p class="demo-note">Учебное демо: бронирования сохраняются только в этом браузере.</p></form></div></div></section>
+
+    <section class="my-bookings" id="bookings" aria-labelledby="bookings-title"><div class="wrap"><div class="section-heading"><div><span class="section-index">05 / ЛИЧНОЕ</span><h2 id="bookings-title">Мои <i>брони.</i></h2></div><p>Ваши учебные бронирования останутся в этом браузере даже после обновления страницы.</p></div><div id="bookings-list" class="bookings-list"></div><button type="button" id="clear-bookings" class="reset-link clear-link" hidden>Сбросить мои брони <span aria-hidden="true">↺</span></button></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><div><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">⌁</span><span>ТИХИЙ<br>БЕРЕГ</span></a><p>Небольшая пауза, которая останется с вами надолго.</p></div><div class="footer-links"><a href="#about">О месте</a><a href="#booking">Домики</a><a href="#map">Карта</a><a href="#bookings">Мои брони</a></div></div><div class="wrap footer-bottom"><span>© 2026 Тихий берег · Учебный проект</span><span>Реальная бронь и оплата не оформляются</span></div></footer>
+  <dialog id="map-dialog" class="map-dialog" aria-labelledby="map-dialog-title"><div class="map-dialog-card"><div class="map-dialog-head"><div><span id="map-dialog-kicker" class="panel-overline"></span><h2 id="map-dialog-title"></h2></div><button id="map-dialog-close" type="button" class="map-dialog-close" aria-label="Закрыть карточку">×</button></div><div id="map-dialog-photo" class="map-dialog-photo"></div><div class="map-dialog-foot"><p id="map-dialog-description"></p><div id="map-dialog-action"></div></div></div></dialog>
+</body>
+</html>

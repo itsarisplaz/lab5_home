@@ -1,0 +1,8 @@
+@media (max-width: 390px) {
+  .house-card { display: block; }
+  .house-card figure { height: auto; aspect-ratio: 4 / 3; }
+  .card-body { padding: 18px; }
+  .card-body p { min-height: 0; }
+  .card-bottom { display: flex; align-items: end; }
+  .card-choice { max-width: 45%; }
+}
